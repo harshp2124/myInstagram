@@ -9,13 +9,14 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <style>
         html,
         body {
-            background-color: #fff;
-            color: #636b6f;
+            background-color: #ffffff;
+            color: #000000;
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
             height: 100vh;
@@ -48,10 +49,10 @@
 
         .title {
             font-size: 84px;
+            font-family: 'Satisfy', cursive;
         }
 
         .links>a {
-            color: #636b6f;
             padding: 0 25px;
             font-size: 13px;
             font-weight: 600;
