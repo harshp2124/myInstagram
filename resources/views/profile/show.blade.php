@@ -12,9 +12,9 @@
                 <follow-button user-name="{{ $user->username }}" follows="{{ $follows }}"></follow-button>
             </div>
             <div class="d-flex">
-                <div><strong>{{ $user->posts->count() }}</strong> posts</div>
-                <div class="pl-5"><strong>{{ $user->profile->followers->count() }}</strong> followers</div>
-                <div class="pl-5"><strong>{{ $user->following->count() }}</strong> following</div>
+                <div><strong>{{ $postCount }}</strong> posts</div>
+                <div class="pl-5"><strong>{{ $followersCount }}</strong> followers</div>
+                <div class="pl-5"><strong>{{ $followingCount }}</strong> following</div>
             </div>
             <div class="pt-4 font-weight-bold">{{ $user->profile->title }}</div>
             <div>
