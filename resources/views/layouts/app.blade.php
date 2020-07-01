@@ -59,12 +59,12 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <div>
-                                    <a class="dropdown-item" href="{{ Auth::user()->username }}">
+                                    <a class="dropdown-item" href="/{{ Auth::user()->username }}">
                                         {{ __('Profile') }}
                                     </a>
                                 </div>
                                 <div>
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    <a class="dropdown-item" href="/{{ route('logout') }}" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
