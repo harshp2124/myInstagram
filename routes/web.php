@@ -23,5 +23,6 @@ Route::get('/home', 'HomeController@index');
 
 Route::post('/p', 'PostsController@store');
 Route::get('/p/create', 'PostsController@create');
+Route::get('/p/{post}', 'PostsController@show');
 
 Route::get('/{username}', 'ProfileController@index');

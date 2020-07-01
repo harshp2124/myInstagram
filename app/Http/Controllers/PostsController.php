@@ -26,7 +26,7 @@ class PostsController extends Controller
         ]);
 
         $imagePath = request('image')->store('uploads', 'public');
-        
+
         $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
         $image->save();
 
@@ -36,5 +36,10 @@ class PostsController extends Controller
         ]);
 
         return redirect(auth()->user()->username);
+    }
+
+    public function show(\App\Post $post)
+    {
+        return view('posts.show', compact('post'));
     }
 }
