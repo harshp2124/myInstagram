@@ -20,7 +20,7 @@ class PostsController extends Controller
     public function store()
     {
         $data = request()->validate([
-            'caption' => 'required',
+            'caption' => '',
             // 'image' => 'required|image',
             'image' => ['required', 'image'],
         ]);

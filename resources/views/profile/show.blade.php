@@ -7,13 +7,14 @@
             <img src="{{ $user->profile->profileImage() }}" class="rounded-circle w-100">
         </div>
         <div class="col-9 pt-5">
-            <div>
-                <h1>{{ $user->username }}</h1>
+            <div class="d-flex justify-contents-between align-items-center">
+                <div class="h3 pt-2 pr-3">{{ $user->username }}</div>
+                <follow-button user-name="{{ $user->username }}" follows="{{ $follows }}"></follow-button>
             </div>
             <div class="d-flex">
                 <div><strong>{{ $user->posts->count() }}</strong> posts</div>
-                <div class="pl-5"><strong>100</strong> followers</div>
-                <div class="pl-5"><strong>312</strong> following</div>
+                <div class="pl-5"><strong>{{ $user->profile->followers->count() }}</strong> followers</div>
+                <div class="pl-5"><strong>{{ $user->following->count() }}</strong> following</div>
             </div>
             <div class="pt-4 font-weight-bold">{{ $user->profile->title }}</div>
             <div>
@@ -25,13 +26,13 @@
                 </a>
                 <br>
                 @can('update', $user->profile)
-                    <a href="/{{ $user->username }}/edit">
-                        Edit Profile
-                    </a>
-                    <br>
-                    <a href="/p/create">
-                        Add New Post
-                    </a>
+                <a href="/{{ $user->username }}/edit">
+                    Edit Profile
+                </a>
+                <br>
+                <a href="/p/create">
+                    Add New Post
+                </a>
                 @endcan
             </div>
         </div>

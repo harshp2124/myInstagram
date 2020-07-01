@@ -13,7 +13,7 @@
                 <div class="form-group row">
                     <label for="caption" class="col-md-4 col-form-label">{{ __('Post Caption') }}</label>
 
-                    <textarea name="caption" id="caption" rows="5" class="form-control @error('caption') is-invalid @enderror" value="{{ old('caption') }}" required autofocus></textarea>
+                    <textarea name="caption" id="caption" rows="5" class="form-control @error('caption') is-invalid @enderror" value="{{ old('caption') }}" autofocus></textarea>
                     @error('caption')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

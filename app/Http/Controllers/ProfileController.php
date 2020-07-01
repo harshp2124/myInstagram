@@ -11,7 +11,9 @@ class ProfileController extends Controller
     public function index($username)
     {
         $user = User::where('username', $username) -> firstOrFail();
-        return view('profile.show', compact('user'));
+        $follows = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
+
+        return view('profile.show', compact('user', 'follows'));
     }
 
     public function edit($username)
@@ -35,6 +37,8 @@ class ProfileController extends Controller
 
             $image = Image::make(public_path("storage/{$imagePath}"))->fit(1000, 1000);
             $image->save();
+
+            $imageArray = ['image' => $imagePath];
         }
 
         else {
@@ -43,7 +47,7 @@ class ProfileController extends Controller
 
         auth()->user()->profile->update(array_merge(
             $data,
-            ['image' => $imagePath],
+            $imageArray ?? [],
         ));
 
         return redirect("/{$username}");
